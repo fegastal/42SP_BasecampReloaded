@@ -1,0 +1,29 @@
+Criar uma função que exibe o alfabeto em letras minúsculas, numa única linha, por
+ordem ascendente, a partir da letra 'a'.
+
+- Eis como deve ser prototipado:
+
+void ft_print_alphabet(void);
+
+Não se esqueça de fazer um protótipo da função ft_putchar na parte superior do seu ficheiro.
+
+_
+
+#include <unistd.h> //Inclusão da biblioteca
+
+void	ft_putchar(char c) //Função de inserção de caracteres
+{
+	write(1, &c, 1);
+}
+
+void	ft_print_alphabet(void) //Função a ser criada de acordo com o que foi pedido
+{
+	char alphabet; //Declaração de uma variável chamada "alphabet", do tipo caractere
+
+	alphabet = 'a'; //Considerando-se que a variável começa com o caractere 'a'
+	while (alphabet <= 'z') //Enquanto ela for menor que o caractere 'z'
+	{
+		ft_putchar(alphabet); //Fazer a inserção do caractere presente na variável
+		alphabet++; //Enquanto ela for incrementando
+	}
+}
