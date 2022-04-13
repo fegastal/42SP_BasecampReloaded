@@ -1,0 +1,28 @@
+Criar uma função que exibe 'N' ou 'P', dependendo do sinal inteiro introduzido
+como parâmetro. Se n for negativo, exibir 'N'. Se n for positivo ou nulo, exibir 'P'.
+
+- Eis como deve ser prototipado :
+void ft_is_negative(int n);
+
+Não se esqueça de fazer um protótipo da função ft_putchar na parte superior do seu ficheiro.
+
+_
+
+#include <unistd.h> //Inclusão da biblioteca
+
+void	ft_is_negative(int n) //Chamar a função pretendida, que devolverá um inteiro n
+{
+	char pos; //Declaração da variável pos
+	char neg; //Declaração da variavésl neg
+
+	pos = 'P'; //Considerando-se que a pos seja igual a 'P'
+	neg = 'N'; //Considerando-se que a neg seja igual a 'N'
+	if (n >= 0) //Se o inteiro n que será devolvido for maior ou igual a 0 (condição de existência)
+	{
+		write(1, &pos, 1); //Escreva o valor de pos, ou seja, devolver 'P'
+	}
+	else //Se for negativo
+	{
+		write(1, &neg, 1); //Escreva o valor de neg, ou seja, devolver 'N'
+	}
+}
