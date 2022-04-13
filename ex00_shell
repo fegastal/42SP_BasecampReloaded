@@ -1,0 +1,110 @@
+Lista de comandos essenciais para realizar os exercícios de Shell:
+
+pwd - indica onde você está localizado no filesystem
+
+mkdir - criar um novo diretório
+
+ls -p - adiciona um barra ao nome do diretório
+
+ls -l - listar todos os arquivos
+_ Se, ao listar os arquivos, houver um "d" inicial nas informações de permissão, é porque este arquivo é um diretório
+
+cd - mudar de diretório
+
+ls -la - ver os arquivos ocultos em um diretório
+_ Sempre que o sistema cria um diretório, ele cria dois arquivos especiais (.) e (..)
+_ (.) representa o próprio diretório
+_ (..) representa o diretório pai
+
+rmdir - deleta um diretório
+
+rwx - permissões para ler, escrever e executar um comando
+
+chmod - altera os direitos de leitura. u - usuário, g - grupo e o - outros
+_ chmod o+r (nome do arquivo) = alteração para dar direito para outros lerem
+_ chmod a-x = alteração para remover o direito de todos (all) de executar o arquivo
+_ chmod g+w = alteração para dar direito aos grupos de escreverem
+
+ou então, há o modo de notação binária:
+
+read - 4
+write - 2
+execute - 1 
+
+exemplo:
+
+rwx rw- r-- = 421 420 400 = 764
+então é só escrever: chmod 764 (nome do arquivo)
+
+_
+
+Dito isto, vamos para o exercício em si:
+
+* Importante tomar cuidado com relação à quantidade de caracteres presentes nos arquivos.
+É necessário editar isso antes de alterar as permissões deles! 
+Isso vai poupar muito tempo, acredite hahaha *
+
+~ comandos a serem usados para a etapa do teste 0 ~
+
+drwx--xr-x 2 XX XX XX Jun 1 20:47 test0
+
+mkdir test0 (porque é um diretório)
+chmod 715 test0
+
+~ comandos a serem usados para a etapa do teste 1 ~
+
+-rwx--xr-- 1 XX XX 4 Jun 1 21:46 test1
+
+touch test1
+vim test1 (colocar 3 caracteres aleatórios dentro porque por default já temos 1)
+chmod 714 test1
+
+~ comandos a serem usados para a etapa do teste 2 ~
+
+dr-x---r-- 2 XX XX XX Jun 1 22:45 test2
+
+mkdir test2 (porque é um diretório)
+vim test1 (colocar nada dentro, apenas abrir o vim porque por default temos 1 caractere)
+chmod 504 test2
+
+~ comandos a serem usados para a etapa do teste 3 ~
+
+-r-----r-- 2 XX XX 1 Jun 1 23:44 test3
+
+touch test3
+ln test3 test5 (foi criado o arquivo test5)
+vim test 3 (colocar nada dentro, apenas abrir o vim porque por default temos 1 caractere)
+chmod 404 test3 
+
+~ comandos a serem usados para a etapa do teste 4 ~
+
+-rw-r----x 1 XX XX 2 Jun 1 23:43 test4
+
+touch test4
+vim test4 (colocar apenas um caractere dentro)
+chmod 641 test4 
+
+~ comandos a serem usados para a etapa do teste 5 ~
+
+-r-----r-- 2 XX XX 1 Jun 1 23:44 test5
+
+(arquivo já criado a partir do link com test3)
+vim test5 (colocar nada dentro, apenas abrir o vim porque por default temos 1 caractere)
+chmod 404 test5 
+
+~ comandos a serem usados para a etapa do teste 6 ~
+
+lXXXXXXXXX 1 XX XX 5 Jun 1 22:20 test6 -> test0
+
+é um arquivo de link (tanto que há um l nas permissões)
+
+ln -s <destino, que é test0> <nome do link, que é test6>
+
+* E é isso, quando der um ls -la é possível verificar que está tudo de acordo com o enunciado.
+Entretanto, agora precisamos transformar essa pasta ex00 em um arquivo do tipo tar: 
+
+Portanto, antes de entrar na pasta ex00, colocar o comando: *
+
+tar -cf exo.tar *
+
+E remover a pasta original (ex00) :) Enviar apenas o arquivo .tar, como foi pedido. 
