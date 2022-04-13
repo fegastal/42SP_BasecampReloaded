@@ -1,0 +1,57 @@
+Num ficheiro chamado clean, a linha de comando irá procurar todos os ficheiros - no
+diretório atual, bem como nos seus subdiretórios - com um nome que termina por ~, ou com
+um nome que começa e termina por #
+
+O comando para isso pode ser:
+
+find . -type f \( -name "*~" -or -name "#*#" \) -print -delete
+
+Ele fará as funções de acordo com o que foi pedido no enunciado.
+Vamos analisar com mais propriedade:
+
+Quando vamos no manual (man find), encontramos algumas informações:
+
+_
+
+     -type t
+             True if the file is of the specified type.  Possible file types
+             are as follows:
+
+             b       block special
+             c       character special
+             d       directory
+             f       regular file
+             l       symbolic link
+             p       FIFO
+             s       socket
+             
+Portanto, -type f é para especificar o tipo de um arquivo regular.
+
+_
+
+      -name
+             True if the last component of the pathname being examined matches
+             pattern.  Special shell pattern matching characters (``['',
+             ``]'', ``*'', and ``?'') may be used as part of pattern.  These
+             characters may be matched explicitly by escaping them with a
+             backslash (``\'').
+             
+Para especificar quais caracteres eu desejo (detalhe em -or, porque pode ser um ou outro)
+
+_
+
+      -print
+             This primary always evaluates to true.  It prints the pathname of
+             the current file to standard output.  If none of -exec, -ls,
+             -print, -print0, or -ok is specified, the given expression shall
+             be effectively replaced by ( given expression ) -print.
+             
+_
+
+-delete
+             Delete found files and/or directories.  Always returns true.
+             This executes from the current working directory as find recurses
+             down the tree.  It will not attempt to delete a filename with a
+             ``/'' character in its pathname relative to ``.'' for security
+             reasons.  Depth-first traversal processing is implied by this
+             option.  Following symlinks is incompatible with this option.
