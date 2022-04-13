@@ -1,0 +1,21 @@
+É muito simples.
+
+Basta criar uma pasta:
+
+mkdir ex01
+
+Entrar nela:
+
+cd ex01
+
+Criar um arquivo chamado "z":
+
+vim z
+
+Dentro do vim, escrever "Z" e depois, na linha de comando, digitar:
+
+cat z
+
+E então, aparecerá "Z".
+
+:)
