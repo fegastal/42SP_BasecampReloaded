@@ -1,0 +1,28 @@
+Criar uma função que exibe todos os dígitos, numa única linha, por ordem ascendente.
+
+- Eis como deve ser prototipada :
+
+void ft_print_numbers(void);
+
+Não se esqueça de fazer um protótipo da função ft_putchar no topo do seu ficheiro.
+
+_
+
+#include <unistd.h> //Inclusão da biblioteca
+
+void	ft_putchar(char c) //Chamar a função putchar, para escrever caracteres
+{
+	write(1, &c, 1);
+}
+
+void	ft_print_numbers(void) //Chamar a função de acordo com o que foi pedido
+{
+	char  num; //Declaração de uma variável chamada num
+
+	num = '0'; //Considerando-se que ela comece em '0', importante colocar aspas simples. Senão, teria que colocar o valor correspondente em ASCII
+	while (num <= '9') //Considerando-se que o número seja menor ou igual a 9
+	{
+		ft_putchar(num); //Fazer a impressão do caractere correspondente
+		num++; //Incrementar o valor da variável em questão
+	}
+}
