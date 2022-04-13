@@ -1,5 +1,5 @@
 Escreva uma linha de comando que procure todos os nomes de ficheiros que terminem com ".sh" (sem
-aspas) no directório actual e em todos os seus subdirectórios. Deve
+aspas) no diretório actual e em todos os seus subdiretórios. Deve
 exibir apenas os nomes dos ficheiros sem o .sh.
 
 #!/bin/sh
