@@ -1,0 +1,12 @@
+Crie uma função que leva um ponteiro a int como parâmetro, e define o valor "42 a este int.
+
+- Eis como deve ser prototipado:
+
+void ft_ft(int *nbr);
+
+_
+
+void	ft_ft(int *nbr) //Não precisamos chamar a biblioteca, apenas criaremos a função que está sendo pedida, que devolverá um pointer
+{
+	*nbr = 42; //Associar o valor de 42 a este pointer em questão
+}
