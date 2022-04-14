@@ -1,0 +1,65 @@
+Estamos aqui a lidar com um programa, pelo que deverá ter uma função principal em
+o seu ficheiro .c.
+
+- Crie um programa que apresente os seus argumentos ordenados por ordem ascii.
+- Deve exibir todos os argumentos, exceto argv[0].
+- Todos os argumentos têm de ter a sua própria linha.
+
+_
+
+#include <unistd.h> //Incluir a biblioteca porque trabalharemos com a função putchar
+
+void	ft_print_params(char *params) //Chamar a função de impressão de parâmetros
+{
+	while (*params) //Condição de existência da função
+		write(1, params++, 1); //Escrever o valor do parâmetro e incrementar
+	write(1, "\n", 1); //Quebra de linha no fim de cada um deles
+}
+
+int	ft_strcmp(char *s1, char *s2) //Chamar a função de comparação entre strings
+{
+	int	i; //Declaração de uma variável i
+
+	i = 0; //Considerar que a variável i comece em zero
+	while (s1[i] == s2[i] && (s1[i] != '\0' || s2[i] != '\0')) //Enquanto o caractere da variável i em s1 for igual ao de s2 e ambas não chegarem no fim)
+	{
+		i++; //Incrementar esse valor de i
+	}
+	return (s1[i] - s2[i]); //Retonar a diferença do valor em ASCII dos caracteres em ambas as strings
+}
+
+void	ft_sort_params(int argc, char *argv[]) //Chamar a função de ordenação de parâmetros
+{
+	int		k; //Declaração da variável k do tipo inteiro
+	char	*temp; //Declaração da variável temp do tipo char, com pointer
+
+	k = 1; //Considerando-se que a variável k comece em 1
+	while (k < argc - 1) //Enquuanto k for menor que o valor do argumento "counter" - 1
+	{
+		if (ft_strcmp(argv[k], argv[k + 1]) > 0) //Se o valor de comparação entre ambos os argumentos forem maiores que zero
+		{
+			temp = argv[k]; //O valor de temp será igual ao valor do argumento "value" com parâmetro k + 1 (incrementado)
+			argv[k] = argv[k + 1]; //O valor do argumento "value" k será igual ao valor do argumento "value" k + 1 (incrementado)
+			argv[k + 1] = temp; //O valor de argumento "value" k + 1 (incrementado) será o valor da variável temp
+			k = 0; //Considerando-se que o valor de k é igual a 0
+		}
+		k++; //Incrementar o valor de k
+	}
+}
+
+int	main(int argc, char *argv[]) //Chamar a função principal porque é pedido um programa, com o parâmetros em questão
+{
+	int	j; //Declarar a variável j
+
+	if (argc > 1) //Condição de existência de argumento "counter"
+	{
+		ft_sort_params(argc, argv); //Chamar a função de ordenação de parâmetros, com os parâmetros em questão
+		j = 1; //Considerando-se que o valor de j seja 1
+		while (j < argc) //Enquanto o valor de j for menor que o do argumento "counter"
+		{
+			ft_print_params(argv[j]); //Chamar a funçaõ de impressão de parâmetros
+			j++; //Incrementar a variável j
+		}
+	}
+	return (0); //Retornar zero caso a condição de existência de "counter" não seja válida
+}
