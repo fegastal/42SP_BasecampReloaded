@@ -1,0 +1,24 @@
+Criar uma função que troca o valor de dois números inteiros cujos endereços são introduzidos
+como parâmetros.
+
+- Eis como deve ser prototipado:
+void  ft_swap(int *a, int *b);
+
+_
+
+void	ft_swap(int *a, int *b) //Chamar a função de acordo com o que foi solicitado
+{
+	int aux; //Declaração de uma variável auxiliar
+
+	aux = *a; //A variável auxiliar vai apontar para o inteiro 'a'
+	*a = *b; //'a' vai apontar para 'b' e obterão os mesmos valores
+	*b = aux; //A variável auxiliar vai armazenar o valor do inteiro b
+}
+
+_
+
+Exemplo: se a = 2 e b = 1, a variável auxiliar vai armazenar o valor de a = 2
+Então, o valor de a será o mesmo que o de b, ou seja, 1
+Portanto, b terá o mesmo valor da variável auxiliar, que é 2.
+
+No fim, a = 1 e b = 2. Ou seja, aconteceu a troca de dois números inteiros.
