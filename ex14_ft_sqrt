@@ -1,0 +1,26 @@
+Criar uma função que devolve a raiz quadrada de um número (se existir), ou 0 se a raiz quadrada é um número irracional.
+
+- Eis como deve ser prototipado :
+int ft_sqrt(int nb);
+- A sua função deve retornar o seu resultado em menos de dois segundos;
+
+_
+
+int		ft_sqrt(int nb) //Chamar a função solicitada a partir de seu protótipo
+{
+	int	n; //Declaração de uma variável n
+
+	n = 1; //Considerando-se que n comece com o valor 1
+	if (nb > 0) //Se o número inteiro passado como parâmetro for positivo
+	{
+		while (n * n <= nb) //Enquanto o número for multiplicado por ele mesmo e o resultado for o número passado como parâmetro (ou menor que ele)
+		{
+			if (n * n == nb) //Se o número multiplicado por ele mesmo for realmente o número passado como parâmetro
+				return (n); //Retornar o número n
+			else if (n >= 46341) //Quaisquer números acima destes, são irracionais
+				return (0); //Retornar 0, portanto
+			n++; //Incrementar o valor do número que será raiz
+		}
+	}
+	return (0); //Retornar 0 se o número for negativo
+}
