@@ -1,0 +1,11 @@
+Criar uma função iterada que devolve um número. Este número é o resultado de uma função de operação factorial com base no número dado como parâmetro.
+
+- Se houver um erro, a função deve retornar 0.
+
+- Eis como deve ser prototipada:
+int ft_iterative_factorial(int nb);
+
+- A sua função deve devolver o seu resultado em menos de dois segundos.
+
+_
+
