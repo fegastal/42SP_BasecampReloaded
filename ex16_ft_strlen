@@ -1,0 +1,19 @@
+Reproduzir o comportamento da função strlen (homem strlen).
+
+- Eis como deve ser prototipado:
+int ft_strlen(char *str);
+
+_
+
+int		ft_strlen(char *str) //Chamar a função solicitada
+{
+	int counter; //Declaração da variável "counter"
+
+	counter = 0; //O valor de "counter", inicialmente, será 0
+	while (*str != '\0') //Enquanto o caracetere na string não for nulo, ou seja, não chegar no fim
+	{
+		counter++; //A variável counter irá incrementar
+		str++; //E passará para a próxima string
+	}
+	return (counter); //E retornará o valor em caracteres da variável "counter"
+}
