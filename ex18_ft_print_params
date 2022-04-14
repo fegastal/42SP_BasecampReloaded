@@ -1,0 +1,40 @@
+Estamos aqui a lidar com um programa, pelo que deverá ter uma função principal em o seu ficheiro .c
+
+- Crie um programa que apresente os seus argumentos.
+- Exemplo:
+
+$>./a.out test1 test2 test3
+test1
+test2
+test3
+$>
+
+_
+
+#include <unistd.h> //Incluir a biblioteca, pois usaremos a função putchar
+
+void	ft_putchar(char c) //Chamar a função putchar para imprimir caracteres
+{
+	write(1, &c, 1);
+}
+
+int	main(int argc, char **argv) //Dessa vez, é necessário chamar a função principal pois estamos lidando com um programa
+{
+	int	s; //Declaração da variável string (s)
+	int	c; //Declaração da variável caractere (c)
+
+	if (argc > 1) //Argumento "counter" for maior que o valor 1
+	{
+		s = 1; //Considerando que a variável string tenha o valor equivalente a 1 (ou seja, exista)
+		while (s < argc) //Enquanto a variável string tiver um valor menor que o argumento counter
+		{
+			c = 0; //Considerando que o valor de caractere comece em 0
+			while (argv[s][c]) //Enquanto o argumento "value" com as variáveis string e caractere for diferente de zero (ou seja, existir)
+				c++; //Haverá a incrementação da variável caractere (pulará para o próximo)
+			write(1, argv[s], c); //Escreverá o valor do argumento "value" string
+			ft_putchar('\n'); //Fazer a impressão da quebra de linha no fim de cada string
+			s++; //Incrementar o valor da string (pulará para a próxima)
+		}
+	}
+	return (0); //Retornar zero caso a condição de existência não seja válida
+}
