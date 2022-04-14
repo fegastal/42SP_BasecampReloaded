@@ -9,3 +9,16 @@ int ft_iterative_factorial(int nb);
 
 _
 
+int		ft_iterative_factorial(int nb) //Chamar a função de acordo com o que foi solicitado
+{
+	int res; //Declaração da variável "res" de "resultado"
+
+	res = 1; //Considerando-se que a variável "res" comece em 1
+	if (nb < 0) //Se o número presente no parâmetro for negativo
+		return (0); //Retornar 0
+	else if (nb <= 1) //Se for negativo, 0 ou 1
+		return (1); //Retorna 1
+	while (nb > 0) //Enquanto ele for positivo
+		res *= nb--; //O valor do resultado será ele mesmo * o valor de nb (e este vai decrementando)
+	return (res); //Retornar o valor do resultado
+}
