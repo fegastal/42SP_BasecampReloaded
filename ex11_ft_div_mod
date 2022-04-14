@@ -1,0 +1,16 @@
+Criar uma função ft_div_mod prototipada como esta:
+void  ft_div_mod(int a, int b, int *div, int *mod);
+
+Esta função divide os parâmetros a por b e armazena o resultado na int apontada por div.
+Também armazena o resto da divisão de a por b na int apontada pelo mod.
+
+_
+
+void	ft_div_mod(int a, int b, int *div, int *mod) //Chamar a função de acordo com o que foi pedido
+{
+	if (b != 0) //Condição de existência
+	{
+		*div = a / b; //Armazenamento do resultado da divisão entre parâmetros a e b
+		*mod = a % b; //Armazenamento do resultado do módulo entre os parâmetros a e b
+	}
+}
