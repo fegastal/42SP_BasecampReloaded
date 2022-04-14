@@ -1,0 +1,7 @@
+Criar uma função que exibe uma sequência de caracteres na saída padrão.
+
+- Eis como deve ser prototipada:
+void ft_putstr(char *str);
+
+_
+
