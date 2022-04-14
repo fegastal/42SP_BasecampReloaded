@@ -1,0 +1,35 @@
+Reproduzir o comportamento do strdup da função (strdup do manual).
+
+- Eis como deve ser prototipado:
+char *ft_strdup(char *src);
+
+_
+
+#include <stdio.h>
+#include <stdlib.h>
+
+char	*ft_strdup(char *src) //Chamar a função de duplicação de string solicitada
+{
+	char	*dest; //Declarar a variável com endereço da string de destino
+	int		i; //Declarar a variável i
+
+	i = 0; //Considerar que i comece em 0
+	while (src[i]) //Condição de existência para a string source (de origem)
+		i++; //Incrementar o valor de i
+	dest = malloc (sizeof(char) * (i + 1)); //Valor de dest precisa armazenar memória suficiente de um caractere vezes o valor de i e incrementá-lo
+	dest[i] = '\0'; //Quando o valor de i na string de destino referente ao caractere nulo (ou seja, o fim da string)
+	while (--i >= 0) //Decrementar o valor de i, considerando-se que seja maior ou igual a zero
+		dest[i] = src[i]; //Quando o valor da variável i em destino for igual ao valor de i na de origem
+	return (dest); //Retornar a string de destino
+}
+
+/*int	main(void)
+{
+	char *test;
+	char *dup;
+	test = "Testando a função strdup!";
+	printf("test = %s\n", test);
+	dup = ft_strdup(test);
+	printf("dup  = %s\n", dup);
+	free(dup); //Lembrar sempre de liberar toda a memória alocada
+}*/
