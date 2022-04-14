@@ -1,0 +1,24 @@
+Reproduzir o comportamento da função strcmp (man strcmp).
+
+- Eis como deve ser prototipado:
+int ft_strcmp(char *s1, char *s2);
+
+_
+
+int	ft_strcmp(char *s1, char *s2) //Chamar a função solicitada após conferir seu manual
+{
+	while (*s1 && (*s1 == *s2)) //Enquanto não chegar no último caractere da string 1 e os caracteres das strings 1 e 2 forem iguais
+	{
+		s1++; //Incrementar o caractere em s1
+		s2++; //Incrementar o caractere em s2
+	}
+	return (*s1 - *s2); //Retornar o valor da diferença (em ASCII) entre s1 e s2.
+}
+
+_
+
+Lembrar do processo de comparação:
+
+Se o resultado for positivo, s1 é maior que s2
+Se o resultado for negativo, s2 é maior que s1
+Se for igual a 0, ambos os caracteres são iguais
