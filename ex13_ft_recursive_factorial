@@ -1,0 +1,19 @@
+Criar uma função recursiva que devolve o fatorial do número dado como um parâmetro.
+
+- Se houver um erro, a função deve retornar 0.
+
+- Eis como deve ser prototipado:
+int ft_recursive_factorial(int nb);
+
+_
+
+
+int		ft_recursive_factorial(int nb) //Chamar a função de acordo com o que foi pedido
+{
+	if (nb < 0) //Se o número presente em seu parâmetro for negativo
+		return (0); //Retornar 0
+	else if (nb <= 1) //Se o número presente em seu parâmetro for negativo, 0 ou 1
+		return (1); //Retornar 1
+	else //Senão
+		return (nb * ft_recursive_factorial(nb - 1)); //Retornar o valor do número multiplicado pela função de recursividade fatorial, com o número de parâmetro decrementado em uma unidade
+}
