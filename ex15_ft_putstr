@@ -5,18 +5,18 @@ void ft_putstr(char *str);
 
 _
 
-#include <unistd.h>
+#include <unistd.h> //Inclusão da biblioteca para podermos usar a função putchar
 
-void	ft_putchar(char c)
+void	ft_putchar(char c) //Chamar a função putchar para fazer a impressão de caracteres
 {
 	write(1, &c, 1);
 }
 
-void	ft_putstr(char *str)
+void	ft_putstr(char *str) //Chamar a função solicitada
 {
-	while (*str != '\0')
+	while (*str != '\0') //Enquanto o caractere presente na string, que foi passada como parâmetro, não chegar no final (condição de segurança)
 	{
-		ft_putchar(*str);
-		str++;
+		ft_putchar(*str); //Fazer a impressão deste caractere
+		str++; //Incrementar para a próxima posição na string
 	}
 }
