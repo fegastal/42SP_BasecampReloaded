@@ -14,44 +14,45 @@ Quando vamos no manual (man find), encontramos algumas informações:
 _
 
      -type t
-             True if the file is of the specified type.  Possible file types
-             are as follows:
+     
+             "True" se o arquivo for do tipo especificado. Tipos de arquivo possíveis
+             são como segue:
 
-             b       block special
-             c       character special
-             d       directory
-             f       regular file
-             l       symbolic link
-             p       FIFO
-             s       socket
+             b bloco especial
+             c caractere especial
+             diretório d
+             f arquivo normal
+             l link simbólico
+             p FIFO
+             s soquete  
              
 Portanto, -type f é para especificar o tipo de um arquivo regular.
 
 _
 
       -name
-             True if the last component of the pathname being examined matches
-             pattern.  Special shell pattern matching characters (``['',
-             ``]'', ``*'', and ``?'') may be used as part of pattern.  These
-             characters may be matched explicitly by escaping them with a
-             backslash (``\'').
+             "Verdadeiro" se o último componente do nome do caminho que está sendo examinado corresponder
+             padronizar. Caracteres especiais de correspondência de padrões de shell (``['',
+             ``]'', ``*'' e ``?'') podem ser usados ​​como parte do padrão. Esses
+             caracteres podem ser correspondidos explicitamente escapando-os com um
+             barra invertida (``\'').             
              
 Para especificar quais caracteres eu desejo (detalhe em -or, porque pode ser um ou outro)
 
 _
 
       -print
-             This primary always evaluates to true.  It prints the pathname of
-             the current file to standard output.  If none of -exec, -ls,
-             -print, -print0, or -ok is specified, the given expression shall
-             be effectively replaced by ( given expression ) -print.
+             Esse primário sempre é avaliado como verdadeiro. Ele imprime o nome do caminho de
+             o arquivo atual para a saída padrão. Se nenhum de -exec, -ls,
+             -print, -print0 ou -ok for especificado, a expressão fornecida deve
+             ser efetivamente substituído por (expressão dada) -print.
              
 _
 
 -delete
-             Delete found files and/or directories.  Always returns true.
-             This executes from the current working directory as find recurses
-             down the tree.  It will not attempt to delete a filename with a
-             ``/'' character in its pathname relative to ``.'' for security
-             reasons.  Depth-first traversal processing is implied by this
-             option.  Following symlinks is incompatible with this option.
+             Exclui os arquivos e/ou diretórios encontrados. Sempre retorna verdadeiro.
+             Isso é executado a partir do diretório de trabalho atual, pois find é recorrente
+             para baixo da árvore. Ele não tentará excluir um nome de arquivo com um
+             caractere ``/'' em seu nome de caminho relativo a ``.'' para segurança
+             razões. O processamento transversal em profundidade está implícito neste
+             opção. Os links simbólicos a seguir são incompatíveis com esta opção.
