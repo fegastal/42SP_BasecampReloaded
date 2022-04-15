@@ -52,5 +52,5 @@ void ft_foreach(int *tab, int length, void (*f)(int)) //Chamar a função solici
 int main() //Para testar, usamos essa função principal
 {
     int array[5] = {1, 2, 3, 4, 5}; //Considerando-se um array composto por 5 números inteiros
-    ft_foreach(array, 5, &ft_putnbr); //Usar a função realizada para aplicá-la em todos os elementos da array
+    ft_foreach(array, 5, &ft_putnbr); //Usar a função realizada para aplicá-la em todos os elementos do array
 }
