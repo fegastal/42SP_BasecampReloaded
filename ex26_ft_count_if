@@ -12,7 +12,7 @@ int	ft_count_if(char **tab, int length, int (*f)(char*)) //Chamar a função sol
 	int n; //Declaração da variável n, do tipo inteiro
 	int i; //Declaração da variável i, do tipo inteiro
 
-	if (tab == 0) //Se o parâmetro tab, do tipo caractere, for igual a zero (delimitação da matriz)
+	if (tab == 0) //Se o parâmetro tab, do tipo caractere, for igual a zero (delimitação da matriz e condição de existência do array)
 		return (0); //Retornar zero, de acordo com o enunciado
 	n = 0; //Considerando-se que n comece com o valor zero
 	i = 0; //Considerando-se que i comece com o valor zero
