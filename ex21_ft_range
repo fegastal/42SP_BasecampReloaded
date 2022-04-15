@@ -20,7 +20,7 @@ int		*ft_range(int min, int max) //Chamar a função solicitada, com os parâmet
 	int i; //Declaração de uma variável i
 
 	if (min >= max) //Se o valor de mínimo for maior ou igual ao valor de máximo
-		return (0); //Retornar zero
+		return (0); //Retornar zero, de acordo com a condição do enunciado
 	p = malloc(max - min); //Considerando-se que o valor da variável p for igual ao valor de malloc multiplicado pela diferença entre o máximo e mínimo
 	if (p == NULL) //Se o valor de p, portanto, for nulo
 		return (0); //Retornar zero
