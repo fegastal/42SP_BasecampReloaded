@@ -1,0 +1,17 @@
+Crie um programa chamado ft_display_file que exiba, na saída padrão, apenas o conteúdo do arquivo dado como argumento.
+
+• O diretório de submissão deve ter um Makefile com as seguintes regras: all, limpo, limpo. O binário será chamado ft_display_file.
+• A função malloc é proibida. Você só pode fazer este exercício declarando um matriz de tamanho fixo.
+• Todos os arquivos dados como argumentos serão válidos.
+• As mensagens de erro devem ser exibidas em sua saída reservada.
+
+$> ./ft_display_file
+File name missing.
+$> ./ft_display_file Makefile
+*content of file Makefile*
+$> ./ft_display_file Makefile display_file.c
+Too many arguments.
+$>
+
+_
+
