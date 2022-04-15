@@ -5,19 +5,23 @@ int ft_count_if(char **tab, int(*f)(char*));
 
 A matriz será delimitada por 0.
 
+Observação:
+
+i++ -> primeiro compara e depois incrementa
+++n -> primeiro incrementa e depois compara
 _
 
 int	ft_count_if(char **tab, int length, int (*f)(char*)) //Chamar a função solicitada de acordo com o protótipo disponibilizado
 {
-	int n; //Declaração da variável n, do tipo inteiro
-	int i; //Declaração da variável i, do tipo inteiro
+	int n; //Declaração da variável n (numero de inteiros)
+	int i; //Declaração da variável i (o inteiro em si)
 
 	if (tab == 0) //Se o parâmetro tab, do tipo caractere, for igual a zero (delimitação da matriz e condição de existência do array)
 		return (0); //Retornar zero, de acordo com o enunciado
-	n = 0; //Considerando-se que n comece com o valor zero
-	i = 0; //Considerando-se que i comece com o valor zero
-	while (i < length) //Enquanto a variável i for menor que o comprimento da array
-		if (f(tab[i++])) //Se o terceiro parâmetro da função - que também é uma função - existir (condição de existência) e tiver como parâmetro tab, com a variável i incrementada
-			++n; //Incrementar também o valor de n
-	return (n); //Retornar n quando i for maior que o comprimento (ou seja, não satisfizer a condição)
+	n = 0; //Considerando-se que n (numero de inteiros) comece com o valor zero
+	i = 0; //Considerando-se que i (o inteiro em si) comece com o valor zero
+	while (i < length) //Enquanto o inteiro no array for menor que o comprimento da array (?)
+		if (f(tab[i++])) //Se o terceiro parâmetro da função - que também é uma função - existir e tiver como parâmetro tab, com a variável i incrementada
+			++n; //Incrementar também o valor de n e depois comparar (?)
+	return (n); //Retornar o número de elementos do array
 }
