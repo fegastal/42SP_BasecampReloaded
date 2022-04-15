@@ -14,10 +14,10 @@ _
 
 #include <stdlib.h> //Inclusão de biblioteca
 
-int		*ft_range(int min, int max) //Chamar a função solicitada, com os parâmetros de máximo e de mínimo
+int	*ft_range(int min, int max) //Chamar a função solicitada, com os parâmetros de máximo e de mínimo
 {
-	int *p; //Declaração de uma variável para o endereço de p
-	int i; //Declaração de uma variável i
+	int	*p; //Declaração de uma variável para o endereço de p
+	int	i; //Declaração de uma variável i
 
 	if (min >= max) //Se o valor de mínimo for maior ou igual ao valor de máximo
 		return (0); //Retornar zero, de acordo com a condição do enunciado
