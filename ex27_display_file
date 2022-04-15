@@ -15,3 +15,147 @@ $>
 
 _
 
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: fgastal- <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/04/15 13:50:42 by fgastal-          #+#    #+#              #
+#    Updated: 2022/04/15 13:51:10 by fgastal-         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+CC=gcc
+FLAGS=-Wall -Wextra -Werror
+INCLUDES=-I includes
+SRCS=$(wildcard srcs/*)
+OBJS=$(notdir $(SRCS:.c=.o))
+BIN=ft_display_file
+
+.PHONY: all clean fclean
+
+all: $(BIN)
+
+$(BIN): $(OBJS)
+	$(CC) $(INCLUDES) $(FLAGS) $? -o $@
+
+$(OBJS): $(SRCS)
+	$(CC) $(FLAGS) -c $(SRCS)
+
+clean:
+	rm $(OBJS)
+
+fclean: clean
+	rm $(BIN)
+
+_
+
+Em uma pasta chamada "includes":
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   display_file.h                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fgastal- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/15 13:45:56 by fgastal-          #+#    #+#             */
+/*   Updated: 2022/04/15 13:54:45 by fgastal-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef DISPLAY_FILE_H
+# define DISPLAY_FILE_H
+
+# include <unistd.h>
+# include <fcntl.h>
+
+void	ft_puterr(char *err);
+void	display_file(char *file);
+
+#endif
+
+_
+
+Em uma pasta chamada scrs:
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   display_file.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fgastal- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/15 13:46:38 by fgastal-          #+#    #+#             */
+/*   Updated: 2022/04/15 13:48:09 by fgastal-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+#include <fcntl.h>
+
+void	display_file(char *file_name)
+{
+	int		fd;
+	char	buf;
+
+	fd = open(file_name, O_RDONLY);
+	if (fd > 0)
+		while (read(fd, &buf, 1))
+			write(1, &buf, 1);
+	close(fd);
+}
+
+_
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_puterr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fgastal- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/15 13:47:13 by fgastal-          #+#    #+#             */
+/*   Updated: 2022/04/15 13:47:26 by fgastal-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_puterr(char *str)
+{
+	while (*str)
+		write(2, str++, 1);
+}
+
+_
+
+Em uma pasta chamada test:
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fgastal- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/15 13:49:21 by fgastal-          #+#    #+#             */
+/*   Updated: 2022/04/15 13:49:49 by fgastal-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int	main(void)
+{
+	char	b[30];
+
+	write(1, "Enter your text: ", 17);
+	read(0, b, 30);
+	write(1, "You Entered: ", 17);
+	write(1, b, 30);
+	return (0);
+	return (0);
+}
