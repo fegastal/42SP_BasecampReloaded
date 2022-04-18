@@ -29,7 +29,7 @@ _
 #                                                                              #
 # **************************************************************************** #
 
-BIN		= ft_display_file
+BIN			= ft_display_file
 SRCS 			= ./src
 INCLUDES 		= ./include
 C_FILES 		= ft_print_str.c main.c ft_display_file.c ft_parser.c
